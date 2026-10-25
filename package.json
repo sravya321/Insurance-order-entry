@@ -1,0 +1,27 @@
+{
+  "name": "insurance-order-entry-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright (TypeScript) automation for the Insurance Order Entry - Whole Life application",
+  "scripts": {
+    "install:browsers": "playwright install --with-deps chromium",
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:critical": "playwright test --grep @critical",
+    "test:ui": "playwright test --project=chromium",
+    "test:api": "playwright test --project=api",
+    "test:e2e": "playwright test tests/e2e",
+    "test:headed": "playwright test --headed --workers=1",
+    "test:debug": "playwright test --debug",
+    "test:all-browsers": "BROWSERS=all playwright test --project=chromium --project=firefox --project=webkit",
+    "list": "playwright test --list",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^22.0.0",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.6.0"
+  }
+}

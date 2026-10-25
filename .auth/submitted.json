@@ -1,0 +1,25 @@
+{
+  "cookies": [
+    {
+      "name": "XSRF-TOKEN",
+      "value": "eyJpdiI6IlRRbWMxSzE3Z3ZXd255c0V6MDZJclE9PSIsInZhbHVlIjoieGlwRlIyZGNUUmZ6ckJYZHpJQlM0emdBdWJaYXV4NW1HMWpGL2c1NW5OTUdQRUxkODJEL3V4OVV3Z1UyRWRjYkd5c1gzTE1GNmlUbFNxbHlUQ3dwMThKOU5jcnRjRHpWZ085bDJuZHpPZEozZ0UzSENrUDhSTk0yWTROMThDRkwiLCJtYWMiOiIzM2JlZDg0OTIzZGE3MmQwYjZiYjA5ZTMyNWE5ZWI0NjMyZmFlMWI4NzBjZmRiM2ZiYWVmZjg2MGUzZGJhZjM5IiwidGFnIjoiIn0%3D",
+      "domain": "136.83.129.92",
+      "path": "/",
+      "expires": 1792941131.51378,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "insurance-order-entry-demo-platform-session",
+      "value": "eyJpdiI6IjNxc1ZFSXl1OFc2WlRaSWsyTmF3ZUE9PSIsInZhbHVlIjoiOUVPQWxBWC9MUFhUUkJYb0ZQRVlYdnBKaVQ3RFpKNmVkWEt1NGZMdFY3MHBhdGtoN1l1SUVtK0lIRU5wVkRidWMyRjZNOTdHMVRxWmtwWFpkU2J2M0taMitCbEt1V3Z3b05uZXdZeUtoaHQ3V0tLNnJjdWtzYUNEc0Z3TTZmU08iLCJtYWMiOiIwNTNiMjdkZWMxNDQ2NGEwNTAxNmRjM2E5ZmRmNTMzNDE2NzQwMmEwZGY0YjA2ZWY1YTUyMmY4ODY2NDM1ZDk0IiwidGFnIjoiIn0%3D",
+      "domain": "136.83.129.92",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}

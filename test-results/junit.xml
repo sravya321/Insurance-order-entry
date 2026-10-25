@@ -1,0 +1,1782 @@
+<testsuites id="" name="" tests="312" failures="5" skipped="287" errors="1" time="99.283451">
+<testsuite name="setup\auth.setup.ts" timestamp="2026-10-25T13:11:19.068Z" hostname="setup" tests="4" failures="0" skipped="0" time="40.261" errors="1">
+<testcase name="authenticate valid" classname="setup\auth.setup.ts" time="32.769">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|setup-auth.setup.ts-authenticate-valid-setup\test-failed-1.png]]
+
+[[ATTACHMENT|setup-auth.setup.ts-authenticate-valid-setup\video.webm]]
+
+[[ATTACHMENT|setup-auth.setup.ts-authenticate-valid-setup\error-context.md]]
+
+[[ATTACHMENT|setup-auth.setup.ts-authenticate-valid-setup\trace.zip]]
+]]>
+</system-out>
+<error message="Login did not leave /login for agent.valid@insurance.test. URL=http://136.83.129.92:8081/login page message: Please review the following:" type="Error">
+<![CDATA[  [setup] › setup\auth.setup.ts:8:8 › authenticate valid ───────────────────────────────────────────
+
+    Error: Login did not leave /login for agent.valid@insurance.test. URL=http://136.83.129.92:8081/login page message: Please review the following:
+    Invalid credentials.
+
+       at ..\pages\LoginPage.ts:25
+
+      23 |     } catch {
+      24 |       const msg = await errors(this.page).first().innerText().catch(() => '(no error text on page)');
+    > 25 |       throw new Error(`Login did not leave /login for ${email}. URL=${this.page.url()} page message: ${msg}`);
+         |             ^
+      26 |     }
+      27 |     if (/\/change-password/.test(this.page.url())) await this.handleForcedPasswordChange(email, password);
+      28 |     console.log(`[login] ${email} landed on ${this.page.url()}`);
+        at LoginPage.loginAndWait (C:\Users\talentfarm_learner\Downloads\insurance-playwright\insurance-playwright\pages\LoginPage.ts:25:13)
+        at C:\Users\talentfarm_learner\Downloads\insurance-playwright\insurance-playwright\tests\setup\auth.setup.ts:9:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\setup-auth.setup.ts-authenticate-valid-setup\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\setup-auth.setup.ts-authenticate-valid-setup\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\setup-auth.setup.ts-authenticate-valid-setup\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\setup-auth.setup.ts-authenticate-valid-setup\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\setup-auth.setup.ts-authenticate-valid-setup\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+<testcase name="authenticate new" classname="setup\auth.setup.ts" time="2.795">
+<system-out>
+<![CDATA[[login] agent.new@insurance.test landed on http://136.83.129.92:8081/applications/47/client
+]]>
+</system-out>
+</testcase>
+<testcase name="authenticate draft" classname="setup\auth.setup.ts" time="2.386">
+<system-out>
+<![CDATA[[login] agent.draft@insurance.test landed on http://136.83.129.92:8081/applications/2/client
+]]>
+</system-out>
+</testcase>
+<testcase name="authenticate submitted" classname="setup\auth.setup.ts" time="2.311">
+<system-out>
+<![CDATA[[login] agent.submitted@insurance.test landed on http://136.83.129.92:8081/applications/48/client
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e\journeys.spec.ts" timestamp="2026-10-25T13:11:19.068Z" hostname="chromium" tests="8" failures="0" skipped="8" time="0" errors="0">
+<testcase name="End-to-end journeys › E2E-001 happy path: login to status tracking @smoke @critical" classname="e2e\journeys.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-end journeys › E2E-002 riders + multiple beneficiaries incl. minor with guardian @critical" classname="e2e\journeys.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-end journeys › E2E-004 negative-to-positive: errors on review then fix then submit @critical" classname="e2e\journeys.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-end journeys › E2E-006 UI submit then API reconciliation" classname="e2e\journeys.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-end journeys › E2E-008 smoke: critical-path sanity @smoke" classname="e2e\journeys.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="E2E - other personas › draft user › E2E-003 draft flow: resume seeded draft and continue @critical" classname="e2e\journeys.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="E2E - other personas › new user › E2E-005 first-run journey from clean state" classname="e2e\journeys.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="E2E - other personas › submitted user › E2E-007 view-only regression for submitted application" classname="e2e\journeys.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui\auth.spec.ts" timestamp="2026-10-25T13:11:19.068Z" hostname="chromium" tests="27" failures="0" skipped="27" time="0" errors="0">
+<testcase name="Authentication (UI) › AUTH-001 valid agent login lands on dashboard @smoke @critical" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-002 login page renders all controls @smoke" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-003 login with Enter key" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-004 logout ends session and blocks back/direct access @critical" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-005 session survives refresh" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-006 wrong password rejected @critical" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-007 unregistered email rejected @critical" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-008 blank email and password" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-009 blank email only" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-010 blank password only" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-011 malformed email &quot;agent.valid@&quot; is not authenticated" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-011 malformed email &quot;agent.valid&quot; is not authenticated" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-011 malformed email &quot;@insurance.test&quot; is not authenticated" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-012 locked account shows locked message @critical" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-013 failed-attempt lockout triggers (discovers threshold) @critical" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-014 attempts below threshold do not lock" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-015 direct /dashboard when logged out redirects @critical @smoke" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-016 protected application routes redirect when logged out @critical" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-017 password masked and not in URL" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-018 password policy consistent (no password set/reset flow documented)" classname="ui\auth.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-019 login errors do not leak internals" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-020 SQL injection / script payloads rejected @security" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-021 email upper-case / whitespace handling (observational)" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-022 learner pool users can login (sample)" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-023 two sessions are isolated @security" classname="ui\auth.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-024 MFA / OTP login - BLOCKED: no MFA user or OTP mechanism supplied (D-02)" classname="ui\auth.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication (UI) › AUTH-025 session timeout - BLOCKED: timeout value not documented" classname="ui\auth.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui\beneficiaries-documents.spec.ts" timestamp="2026-10-25T13:11:19.068Z" hostname="chromium" tests="46" failures="0" skipped="46" time="0" errors="0">
+<testcase name="Beneficiaries › BEN-001 single primary 100% accepted @smoke @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-002 multiple beneficiaries totalling 100% accepted @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-003 no primary beneficiary blocked @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-004 total below 100% blocked @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-005 total above 100% blocked @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-006 single beneficiary at 99% blocked @boundary" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-006 single beneficiary at 99.99% blocked @boundary" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-006 single beneficiary at 100.01% blocked @boundary" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-006 single beneficiary at 101% blocked @boundary" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-007 invalid allocation 0 rejected" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-007 invalid allocation -10 rejected" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-007 invalid allocation 101 rejected" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-008 minor without guardian blocked @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-009 minor with guardian accepted @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-010 adult beneficiary does not require guardian" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-011a beneficiary exactly 18 treated as adult @boundary" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-011b beneficiary 17y364d treated as minor @boundary" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-012 beneficiary future DOB rejected" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-013 duplicate beneficiary prevented @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-014 removing a beneficiary leaves invalid total -&gt; blocked @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-016 mandatory beneficiary fields blank rejected" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-019 beneficiaries persist on resume @regression" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-017 primary vs contingent totals - BLOCKED: rule unconfirmed (Clarification 7)" classname="ui\beneficiaries-documents.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-018 trust / organisation beneficiary - BLOCKED: rule unconfirmed (Clarification 7)" classname="ui\beneficiaries-documents.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries › BEN-020 maximum beneficiary count - BLOCKED: limit not documented" classname="ui\beneficiaries-documents.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-001 required documents listed" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-002 upload valid PDF @smoke @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-003 upload valid valid.jpg" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-003 upload valid valid.png" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-004 unsupported bad.exe rejected @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-004 unsupported bad.zip rejected @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-004 unsupported bad.js rejected @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-004 unsupported bad.html rejected @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-005 disguised file invoice.pdf.exe rejected/flagged @security" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-005 disguised file disguised.pdf rejected/flagged @security" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-006 file at size limit accepted @boundary" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-007 file above size limit rejected @critical @boundary" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-008 empty.pdf rejected" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-008 corrupt.png rejected" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-009 missing required document blocks progress @critical" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-011 replace uploaded document" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-012 delete uploaded document returns to missing" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-013 special-character filename handled" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-014 network failure during upload does not show false success" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-015 documents persist after resume @regression" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Documents › DOC-fixture-sanity fixture files exist" classname="ui\beneficiaries-documents.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui\client-address.spec.ts" timestamp="2026-10-25T13:11:19.068Z" hostname="chromium" tests="46" failures="0" skipped="46" time="0" errors="0">
+<testcase name="Client eligibility › CLNT-001 valid client progresses @smoke @critical" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-002 all mandatory fields blank blocked" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-003 blank &quot;First Name&quot; blocked" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-003 blank &quot;Last Name&quot; blocked" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-003 blank &quot;Date of Birth&quot; blocked" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-004 age exactly 18 accepted @critical @boundary" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-005 age 17y364d rejected @critical @boundary" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-006 age 17 rejected @critical @boundary" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-007 age exactly 65 accepted @critical @boundary" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-008 age 65y+1d rejected @critical @boundary" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-008b age 66 rejected @critical @boundary" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-009 future DOB rejected @critical" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-010 DOB equals today rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-011 invalid DOB &quot;31/02/1990&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-011 invalid DOB &quot;00/00/0000&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-011 invalid DOB &quot;abc&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-011 invalid DOB &quot;1990-13-40&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-012 leap-day DOB accepted" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-013 editing DOB later re-enforces eligibility @regression" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-014 name field validation (observational)" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-015 script injection is not executed @security" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-016 data persists after refresh and back @regression" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client eligibility › CLNT-017 duplicate client rule (not documented)" classname="ui\client-address.spec.ts">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-001 valid address/contact progress @smoke" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-002 mandatory fields blank blocked" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-003 invalid email &quot;abc&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-003 invalid email &quot;a@b&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-003 invalid email &quot;a@.com&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-003 invalid email &quot;@b.com&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-003 invalid email &quot;a b@c.com&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-003 invalid email &quot;a@@b.com&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-004 valid email variants accepted" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-005 invalid phone &quot;abcdefghij&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-005 invalid phone &quot;123&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-005 invalid phone &quot;1111111111111111111111111&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-005 invalid phone &quot;!!!###$$$&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-005 invalid phone &quot;&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-007 invalid postal &quot;ABCDEF&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-007 invalid postal &quot;12&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-007 invalid postal &quot;111111111111&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-007 invalid postal &quot;@@@###&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-007 invalid postal &quot;&quot; rejected" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-008 copy address copies every field exactly @critical" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-010 untick copy re-enables fields" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-011 field length limit enforced (observational)" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact › ADDR-012 persists on save draft and resume @regression" classname="ui\client-address.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui\dashboard.spec.ts" timestamp="2026-10-25T13:11:19.068Z" hostname="chromium" tests="16" failures="0" skipped="16" time="0" errors="0">
+<testcase name="Dashboard - valid agent › DASH-001 loads with list and New Application action @smoke @critical" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard - valid agent › DASH-005 New Application creates a draft and opens client step @smoke @critical" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard - valid agent › DASH-007 filter by status" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard - valid agent › DASH-008 search applications (if present)" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard - valid agent › DASH-012 invalid / non-existent applicationId shows safe error" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard - valid agent › DASH-015 new draft appears on dashboard" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard - valid agent › DASH-016 dashboard load time baseline (recorded)" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard - fresh user › DASH-002 empty state with New Application CTA @smoke" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard - draft user › DASH-003 shows seeded draft(s)" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard - draft user › DASH-006 resume draft opens application with data intact @critical" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard - submitted user › DASH-004 shows submitted application with reference @critical" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard - submitted user › DASH-013 submitted application opens read-only @critical" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard isolation › DASH-010 own-record isolation in list @security @critical" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard isolation › DASH-011 opening another agent’s application by URL is denied (IDOR) @security @critical" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard isolation › DASH-009 status summary counts match list" classname="ui\dashboard.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard isolation › DASH-014 status badge labels (needs full status list - D-08)" classname="ui\dashboard.spec.ts">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui\kyc-product-riders.spec.ts" timestamp="2026-10-25T13:11:19.068Z" hostname="chromium" tests="49" failures="0" skipped="49" time="0" errors="0">
+<testcase name="KYC / Financial / Compliance › KYC-001 valid KYC &amp; financial progress @smoke @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-002 ID number masked after save @security @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-003 ID not exposed in API responses @security @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-004 invalid ID &quot;1&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-004 invalid ID &quot;abc&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-004 invalid ID &quot;!!!!&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-004 invalid ID &quot;00000000&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-005 mandatory KYC evidence missing blocks progress @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-006 valid KYC upload" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-007 unsupported KYC file rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-008 PEP=Yes shows mandatory conditional fields @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-009 PEP=Yes with missing details blocked @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-010 PEP=Yes with complete details accepted" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-011 PEP=No hides conditional fields" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-012 required declaration unticked blocks @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-013 invalid income &quot;-1&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-013 invalid income &quot;0&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-013 invalid income &quot;abc&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-013 invalid income &quot;10000000000000&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-014 affordability rule applied - BLOCKED: rule values not supplied (D-07)" classname="ui\kyc-product-riders.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-015 adequate income accepted - BLOCKED: rule values not supplied (D-07)" classname="ui\kyc-product-riders.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="KYC / Financial / Compliance › KYC-017 KYC data persists after draft save/resume @regression" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-001 select eligible Whole Life product @smoke @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-002 premium displayed and numeric @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-003 face value below minimum rejected @boundary" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-004 face value exactly minimum accepted @boundary" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-005 face value exactly maximum accepted @boundary" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-006 face value above maximum rejected @boundary" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-007 invalid face value &quot;0&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-007 invalid face value &quot;-1000&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-007 invalid face value &quot;abc&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-007 invalid face value &quot;&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-007 invalid face value &quot;1.5&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-007 invalid face value &quot;1000000000000&quot; rejected" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-008 premium recalculates when face value changes @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-009 stale premium not retained after change and navigation @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-012 DOB change re-validates product @regression" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-013 product selection persists on resume @regression" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-010 premium drivers (payment mode/term) - BLOCKED: premium formula not supplied (D-07)" classname="ui\kyc-product-riders.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product › PROD-011 unsuitable product for client profile - BLOCKED: eligibility rules not supplied" classname="ui\kyc-product-riders.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Riders › RDR-014 no rider selected is allowed @smoke" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Riders › RDR-001/002 add eligible rider updates premium; removal reverts" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Riders › RDR-003 rider coverage above base rejected @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Riders › RDR-007 max rider count exceeded blocked @boundary" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Riders › RDR-010 mutually exclusive riders cannot coexist @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Riders › RDR-008 dependent rider without prerequisite blocked @critical" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Riders › RDR-013 rider selection persists on resume @regression" classname="ui\kyc-product-riders.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Riders › RDR-005/006 rider age limit - BLOCKED: per-rider age limits not supplied (D-07)" classname="ui\kyc-product-riders.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Riders › RDR-012 base face value reduced below rider coverage - needs rider values (D-07)" classname="ui\kyc-product-riders.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui\remaining.spec.ts" timestamp="2026-10-25T13:11:19.068Z" hostname="chromium" tests="10" failures="0" skipped="10" time="0" errors="0">
+<testcase name="Remaining UI coverage › ADDR-006 valid phone accepted" classname="ui\remaining.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining UI coverage › ADDR-009 copy address then edit original (observational)" classname="ui\remaining.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining UI coverage › KYC-016 changing income after product re-triggers suitability - BLOCKED: rule values not supplied (D-07)" classname="ui\remaining.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining UI coverage › RDR-004 rider coverage equal/below/above base boundaries - BLOCKED: rider limits not supplied (D-07)" classname="ui\remaining.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining UI coverage › RDR-009 removing prerequisite leaves orphan dependent rider - BLOCKED: dependency matrix not supplied (D-07)" classname="ui\remaining.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining UI coverage › RDR-011 duplicate same rider cannot be added twice" classname="ui\remaining.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining UI coverage › BEN-015 edit beneficiary allocation revalidates totals" classname="ui\remaining.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining UI coverage › DOC-010 upload status indicators show uploaded / failed states" classname="ui\remaining.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining UI coverage › NAV-005 two tabs editing same application do not corrupt data" classname="ui\remaining.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cross-browser (logged out) › NFR-001 cross-browser smoke: login page renders @cross-browser @smoke" classname="ui\remaining.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui\review-status.spec.ts" timestamp="2026-10-25T13:11:19.068Z" hostname="chromium" tests="32" failures="0" skipped="32" time="0" errors="0">
+<testcase name="Review &amp; submit › REV-001 review shows captured data with masked ID @critical" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review &amp; submit › REV-002/004 errors grouped and Submit disabled for incomplete application @critical" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review &amp; submit › REV-003 error link navigates to source step" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review &amp; submit › REV-005 fixing errors enables Submit @critical" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review &amp; submit › REV-006 re-introducing an error disables Submit @regression" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review &amp; submit › REV-007 successful submission shows reference and Submitted status @smoke @critical" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review &amp; submit › REV-008 reference numbers are unique" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review &amp; submit › REV-009 double-click submit creates a single submission @critical" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review &amp; submit › REV-010 submitted application is read-only @critical" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review &amp; submit › REV-011 browser Back after submit cannot resubmit" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review &amp; submit › REV-012 submit with expired session redirects to login" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review &amp; submit › REV-013 save draft with incomplete data" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review &amp; submit › REV-014 data not lost navigating between steps @regression" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review &amp; submit › REV-015 direct /confirmation or /status for draft shows no confirmation @critical" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Status tracking › STAT-001/002/003 reference &amp; status consistent across confirmation, status page and dashboard @critical" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Status tracking › STAT-005 draft application has no reference" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Status tracking › STAT-007 status stable across refresh" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Status tracking › STAT-004 status history / transitions - BLOCKED: transition matrix not supplied (D-08)" classname="ui\review-status.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Status - submitted user › STAT-001b seeded submitted application shows Submitted + reference @smoke" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Status isolation › STAT-006 other agent cannot view status @security @critical" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation &amp; routes › NAV-001 forward/back keeps data @regression" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation &amp; routes › NAV-002 skip-ahead via URL is blocked or flagged" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation &amp; routes › NAV-003 all documented routes resolve @smoke" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation &amp; routes › NAV-004 refresh on every step keeps the page working" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cross-cutting - logged out › NFR-003 keyboard navigation reaches primary login control" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cross-cutting › NFR-006 security headers / cookie flags (recorded; site is plain HTTP)" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cross-cutting › NFR-002 responsive layout has no horizontal overflow" classname="ui\review-status.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Database (blocked) › DB-001 draft persisted in DB - BLOCKED: DB access, schema and approved queries not supplied (D-06)" classname="ui\review-status.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Database (blocked) › DB-002 submitted record stored with reference/status - BLOCKED: DB access, schema and approved queries not supplied (D-06)" classname="ui\review-status.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Database (blocked) › DB-003 beneficiary totals = 100 - BLOCKED: DB access, schema and approved queries not supplied (D-06)" classname="ui\review-status.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Database (blocked) › DB-004 status history rows - BLOCKED: DB access, schema and approved queries not supplied (D-06)" classname="ui\review-status.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Database (blocked) › DB-005 sensitive ID stored securely - BLOCKED: DB access, schema and approved queries not supplied (D-06)" classname="ui\review-status.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="api\application-modules.api.spec.ts" timestamp="2026-10-25T13:11:19.068Z" hostname="api" tests="41" failures="0" skipped="36" time="22.768" errors="0">
+<testcase name="Client (API) › CAPI-001 valid client payload stored @smoke" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client (API) › CAPI-002 age 17 rejected (UI/API parity) @critical @boundary" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client (API) › CAPI-003 age 66 rejected @critical @boundary" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client (API) › CAPI-004 future DOB rejected @critical @boundary" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client (API) › CAPI-005a age 18 accepted @critical @boundary" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client (API) › CAPI-005b age 65 accepted @critical @boundary" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client (API) › CAPI-006 omit mandatory -&gt; 4xx, no 500" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client (API) › CAPI-006 wrong types -&gt; 4xx, no 500" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client (API) › CAPI-006 nulls -&gt; 4xx, no 500" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Client (API) › CAPI-007 update other user’s application denied @security @critical" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact / KYC (API) › ACAPI-001 invalid email rejected" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact / KYC (API) › ACAPI-001 invalid phone rejected" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact / KYC (API) › ACAPI-001 invalid postalCode rejected" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact / KYC (API) › ACAPI-002 valid address stored" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact / KYC (API) › KAPI-001 PEP=true without details rejected @critical" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact / KYC (API) › KAPI-002 sensitive ID masked in responses @security @critical" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact / KYC (API) › KAPI-003 invalid income -1 rejected" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Address &amp; contact / KYC (API) › KAPI-003 invalid income abc rejected" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product &amp; riders (API) › PAPI-003/005 invalid product payloads rejected, no 500" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product &amp; riders (API) › PAPI-002 face value below min / above max rejected @boundary" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="limits not supplied (D-07)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product &amp; riders (API) › PAPI-001 API premium equals UI premium" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="fixme" value="BLOCKED: premium formula / service path not supplied (D-05, D-07)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product &amp; riders (API) › RAPI-001 rider coverage above base rejected @critical" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="RIDER_NAME not supplied (D-07)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product &amp; riders (API) › RAPI-002 exclusive riders rejected @critical" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="exclusive riders not supplied (D-07)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries &amp; documents (API) › BAPI-001 allocation total 90 rejected @critical" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries &amp; documents (API) › BAPI-001 allocation total 110 rejected @critical" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries &amp; documents (API) › BAPI-002 minor without guardian rejected @critical" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries &amp; documents (API) › BAPI-003 duplicate beneficiary rejected @critical" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries &amp; documents (API) › BAPI-004 valid beneficiaries 60/40 stored" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries &amp; documents (API) › DAPI2-001 oversized / unsupported upload rejected @critical" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Beneficiaries &amp; documents (API) › DAPI2-004 upload to another user’s application denied @security" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review / submit / status (API) › RAPI2-001 validation service lists errors for incomplete app" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review / submit / status (API) › RAPI2-002 submit incomplete application rejected @critical" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review / submit / status (API) › RAPI2-005 / CAPI-008 edit after submit rejected @critical" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="list endpoint differs">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review / submit / status (API) › RAPI2-006 mass assignment of status/reference ignored @security" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review / submit / status (API) › SAPI-001 status API for submitted app returns reference" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="list endpoint differs">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Review / submit / status (API) › SAPI-002 status for unknown / other user’s app denied" classname="api\application-modules.api.spec.ts" time="0.667">
+</testcase>
+<testcase name="General API › GAPI-001 error responses share a consistent JSON structure" classname="api\application-modules.api.spec.ts" time="1.243">
+<properties>
+<property name="error-shapes" value="exception,file,line,message,trace">
+</property>
+</properties>
+</testcase>
+<testcase name="General API › GAPI-002 malformed JSON and wrong content-type -&gt; 4xx" classname="api\application-modules.api.spec.ts" time="0.624">
+</testcase>
+<testcase name="General API › GAPI-003 unsupported method -&gt; 405" classname="api\application-modules.api.spec.ts" time="0.638">
+</testcase>
+<testcase name="General API › GAPI-005 injection payloads do not cause 500 @security" classname="api\application-modules.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="General API › GAPI-006 response time baseline recorded" classname="api\application-modules.api.spec.ts" time="0.601">
+<properties>
+<property name="list-ms" value="274">
+</property>
+</properties>
+</testcase>
+</testsuite>
+<testsuite name="api\auth-dashboard.api.spec.ts" timestamp="2026-10-25T13:11:19.068Z" hostname="api" tests="19" failures="4" skipped="5" time="8.73" errors="0">
+<testcase name="Authentication (API) › AAPI-001 call without X-API-Key is rejected @critical @smoke" classname="api\auth-dashboard.api.spec.ts" time="0.326">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|api-auth-dashboard.api-Aut-bd191--is-rejected-critical-smoke-api\error-context.md]]
+
+[[ATTACHMENT|api-auth-dashboard.api-Aut-bd191--is-rejected-critical-smoke-api\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(received).toContain(expected) // indexOf" type="expect.toContain">
+<![CDATA[  [api] › api\auth-dashboard.api.spec.ts:7:7 › Authentication (API) › AAPI-001 call without X-API-Key is rejected @critical @smoke 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected value: 404
+    Received array: [401, 403]
+
+       7 |   test('AAPI-001 call without X-API-Key is rejected @critical @smoke', async () => {
+       8 |     const c = await ApiClient.create({ key: null }); const r = await c.get(api.applications);
+    >  9 |     expect([401, 403]).toContain(r.status()); await c.dispose();
+         |                        ^
+      10 |   });
+      11 |   test('AAPI-002 invalid X-API-Key is rejected @critical', async () => {
+      12 |     const c = await ApiClient.create({ key: 'invalid-token' }); const r = await c.get(api.applications);
+        at C:\Users\talentfarm_learner\Downloads\insurance-playwright\insurance-playwright\tests\api\auth-dashboard.api.spec.ts:9:24
+
+    Error Context: ..\test-results\api-auth-dashboard.api-Aut-bd191--is-rejected-critical-smoke-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\api-auth-dashboard.api-Aut-bd191--is-rejected-critical-smoke-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\api-auth-dashboard.api-Aut-bd191--is-rejected-critical-smoke-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Authentication (API) › AAPI-002 invalid X-API-Key is rejected @critical" classname="api\auth-dashboard.api.spec.ts" time="0.326">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|api-auth-dashboard.api-Aut-215cb-PI-Key-is-rejected-critical-api\error-context.md]]
+
+[[ATTACHMENT|api-auth-dashboard.api-Aut-215cb-PI-Key-is-rejected-critical-api\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(received).toContain(expected) // indexOf" type="expect.toContain">
+<![CDATA[  [api] › api\auth-dashboard.api.spec.ts:11:7 › Authentication (API) › AAPI-002 invalid X-API-Key is rejected @critical 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected value: 404
+    Received array: [401, 403]
+
+      11 |   test('AAPI-002 invalid X-API-Key is rejected @critical', async () => {
+      12 |     const c = await ApiClient.create({ key: 'invalid-token' }); const r = await c.get(api.applications);
+    > 13 |     expect([401, 403]).toContain(r.status()); expect(await r.text()).not.toMatch(/stack|exception at/i); await c.dispose();
+         |                        ^
+      14 |   });
+      15 |   test('AAPI-003 valid X-API-Key accepted @critical @smoke', async () => {
+      16 |     const c = await ApiClient.create(); const r = await c.get(api.applications);
+        at C:\Users\talentfarm_learner\Downloads\insurance-playwright\insurance-playwright\tests\api\auth-dashboard.api.spec.ts:13:24
+
+    Error Context: ..\test-results\api-auth-dashboard.api-Aut-215cb-PI-Key-is-rejected-critical-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\api-auth-dashboard.api-Aut-215cb-PI-Key-is-rejected-critical-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\api-auth-dashboard.api-Aut-215cb-PI-Key-is-rejected-critical-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Authentication (API) › AAPI-003 valid X-API-Key accepted @critical @smoke" classname="api\auth-dashboard.api.spec.ts" time="0.362">
+</testcase>
+<testcase name="Authentication (API) › AAPI-004 login valid credentials @critical" classname="api\auth-dashboard.api.spec.ts" time="0.293">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|api-auth-dashboard.api-Aut-018f2--valid-credentials-critical-api\error-context.md]]
+
+[[ATTACHMENT|api-auth-dashboard.api-Aut-018f2--valid-credentials-critical-api\trace.zip]]
+]]>
+</system-out>
+<failure message="login got 404" type="expect.toContain">
+<![CDATA[  [api] › api\auth-dashboard.api.spec.ts:20:7 › Authentication (API) › AAPI-004 login valid credentials @critical 
+
+    Error: login got 404
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 404
+    Received array: [200, 201, 202, 204]
+
+       at api\helpers.ts:20
+
+      18 | export const rejected = (s: number) => [400, 401, 403, 404, 409, 413, 415, 422].includes(s);
+      19 | export function expectRejected(status: number, msg = '') { expect(rejected(status), `${msg} expected 4xx rejection, got ${status}`).toBeTruthy(); }
+    > 20 | export function expectOk(status: number, msg = '') { expect([200, 201, 202, 204], `${msg} got ${status}`).toContain(status); }
+         |                                                                                                           ^
+      21 |
+        at expectOk (C:\Users\talentfarm_learner\Downloads\insurance-playwright\insurance-playwright\tests\api\helpers.ts:20:107)
+        at C:\Users\talentfarm_learner\Downloads\insurance-playwright\insurance-playwright\tests\api\auth-dashboard.api.spec.ts:21:91
+
+    Error Context: ..\test-results\api-auth-dashboard.api-Aut-018f2--valid-credentials-critical-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\api-auth-dashboard.api-Aut-018f2--valid-credentials-critical-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\api-auth-dashboard.api-Aut-018f2--valid-credentials-critical-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Authentication (API) › AAPI-005 login invalid credentials @critical" classname="api\auth-dashboard.api.spec.ts" time="0.343">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|api-auth-dashboard.api-Aut-ae1d4-nvalid-credentials-critical-api\error-context.md]]
+
+[[ATTACHMENT|api-auth-dashboard.api-Aut-ae1d4-nvalid-credentials-critical-api\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(received).toContain(expected) // indexOf" type="expect.toContain">
+<![CDATA[  [api] › api\auth-dashboard.api.spec.ts:23:7 › Authentication (API) › AAPI-005 login invalid credentials @critical 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected value: 404
+    Received array: [400, 401, 403]
+
+      22 |   });
+      23 |   test('AAPI-005 login invalid credentials @critical', async () => {
+    > 24 |     const c = await ApiClient.create(); const r = await c.login(env.users.valid, 'wrong'); expect([400, 401, 403]).toContain(r.status());
+         |                                                                                                                    ^
+      25 |     expect(c.token).toBe(''); await c.dispose();
+      26 |   });
+      27 |   test('AAPI-006 login locked user @critical', async () => {
+        at C:\Users\talentfarm_learner\Downloads\insurance-playwright\insurance-playwright\tests\api\auth-dashboard.api.spec.ts:24:116
+
+    Error Context: ..\test-results\api-auth-dashboard.api-Aut-ae1d4-nvalid-credentials-critical-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\api-auth-dashboard.api-Aut-ae1d4-nvalid-credentials-critical-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\api-auth-dashboard.api-Aut-ae1d4-nvalid-credentials-critical-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Authentication (API) › AAPI-006 login locked user @critical" classname="api\auth-dashboard.api.spec.ts" time="0.388">
+<properties>
+<property name="locked-response" value="404 {
+    &quot;message&quot;: &quot;The route api/auth/login could not be found.&quot;,
+    &quot;exception&quot;: &quot;Symfony\\Component\\HttpKernel\\Excep">
+</property>
+</properties>
+</testcase>
+<testcase name="Authentication (API) › AAPI-007 login malformed payload {} -&gt; 4xx no 500" classname="api\auth-dashboard.api.spec.ts" time="0.309">
+</testcase>
+<testcase name="Authentication (API) › AAPI-007 login malformed payload {&quot;email&quot;:&quot;agent.valid@insurance.test&quot;} -&gt; 4xx no 500" classname="api\auth-dashboard.api.spec.ts" time="0.3">
+</testcase>
+<testcase name="Authentication (API) › AAPI-007 login malformed payload {&quot;email&quot;:123,&quot;password&quot;:{}} -&gt; 4xx no 500" classname="api\auth-dashboard.api.spec.ts" time="0.347">
+</testcase>
+<testcase name="Authentication (API) › AAPI-007 login malformed payload &quot;not-json&quot; -&gt; 4xx no 500" classname="api\auth-dashboard.api.spec.ts" time="0.306">
+</testcase>
+<testcase name="Authentication (API) › AAPI-009 logout invalidates token" classname="api\auth-dashboard.api.spec.ts">
+<properties>
+<property name="skip" value="login service did not return a token">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard / applications (API) › DAPI-001 list returns only caller records @security @critical" classname="api\auth-dashboard.api.spec.ts">
+<properties>
+<property name="skip" value="list endpoint not available as assumed">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard / applications (API) › DAPI-002/005 create application returns id with Draft status @smoke" classname="api\auth-dashboard.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard / applications (API) › DAPI-003 get application by id - non-owner denied @security @critical" classname="api\auth-dashboard.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dashboard / applications (API) › DAPI-004 malformed id &quot;0&quot; -&gt; 4xx" classname="api\auth-dashboard.api.spec.ts" time="0.58">
+</testcase>
+<testcase name="Dashboard / applications (API) › DAPI-004 malformed id &quot;-1&quot; -&gt; 4xx" classname="api\auth-dashboard.api.spec.ts" time="0.585">
+</testcase>
+<testcase name="Dashboard / applications (API) › DAPI-004 malformed id &quot;abc&quot; -&gt; 4xx" classname="api\auth-dashboard.api.spec.ts" time="0.6">
+</testcase>
+<testcase name="Dashboard / applications (API) › DAPI-004 malformed id &quot;xxxxxxxxxx&quot; -&gt; 4xx" classname="api\auth-dashboard.api.spec.ts" time="0.565">
+</testcase>
+<testcase name="Dashboard / applications (API) › DAPI-006 status filter returns only matching" classname="api\auth-dashboard.api.spec.ts">
+<properties>
+<property name="skip" value="filter not supported as assumed">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="api\remaining.api.spec.ts" timestamp="2026-10-25T13:11:19.068Z" hostname="api" tests="14" failures="1" skipped="12" time="4.218" errors="0">
+<testcase name="Remaining API coverage › AAPI-008 other user’s data via token is denied @security @critical" classname="api\remaining.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining API coverage › ACAPI-003 address payload with omitted mandatory fields rejected" classname="api\remaining.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining API coverage › KAPI-004 valid KYC/financial persisted and returned" classname="api\remaining.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining API coverage › PAPI-004 face value change recalculates premium (API)" classname="api\remaining.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining API coverage › RAPI-003 rider age ineligible rejected - BLOCKED: rider age limits not supplied (D-07)" classname="api\remaining.api.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining API coverage › RAPI-004 valid riders persisted; premium reconciles with UI" classname="api\remaining.api.spec.ts">
+<properties>
+<property name="skip" value="RIDER_NAME not supplied (D-07)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining API coverage › BAPI-005 delete beneficiary re-validates remaining total @critical" classname="api\remaining.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining API coverage › DAPI2-002 oversized upload rejected @boundary" classname="api\remaining.api.spec.ts">
+<properties>
+<property name="skip" value="MAX_UPLOAD_MB not supplied (D-08)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining API coverage › DAPI2-003 valid upload then list documents" classname="api\remaining.api.spec.ts">
+<properties>
+<property name="skip" value="Could not create application via POST /applications - confirm endpoint/contract (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining API coverage › RAPI2-003 submit valid application via API - BLOCKED: needs full API contract to build a valid app (D-05)" classname="api\remaining.api.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining API coverage › RAPI2-004 submitting an already-submitted application is rejected / idempotent @critical" classname="api\remaining.api.spec.ts">
+<properties>
+<property name="skip" value="list endpoint differs (D-05)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining API coverage › GAPI-004 response schema validation - BLOCKED: API schemas not supplied (D-05)" classname="api\remaining.api.spec.ts">
+<properties>
+<property name="fixme" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Remaining API coverage › NFR-004 environment health: every seeded agent can authenticate" classname="api\remaining.api.spec.ts" time="0.278">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|api-remaining.api-Remainin-e1c3e-eded-agent-can-authenticate-api\error-context.md]]
+
+[[ATTACHMENT|api-remaining.api-Remainin-e1c3e-eded-agent-can-authenticate-api\trace.zip]]
+]]>
+</system-out>
+<failure message="login agent.valid@insurance.test" type="expect.toBeLessThan">
+<![CDATA[  [api] › api\remaining.api.spec.ts:66:7 › Remaining API coverage › NFR-004 environment health: every seeded agent can authenticate 
+
+    Error: login agent.valid@insurance.test
+
+    expect(received).toBeLessThan(expected)
+
+    Expected: < 400
+    Received:   404
+
+      66 |   test('NFR-004 environment health: every seeded agent can authenticate', async () => {
+      67 |     for (const email of [env.users.valid, env.users.new, env.users.draft, env.users.submitted]) {
+    > 68 |       const c = await ApiClient.create(); const r = await c.login(email); expect(r.status(), `login ${email}`).toBeLessThan(400); await c.dispose();
+         |                                                                                                                ^
+      69 |     }
+      70 |   });
+      71 |   test('NFR-005 evidence capture is configured (trace/video/screenshot on failure)', async ({}, info) => {
+        at C:\Users\talentfarm_learner\Downloads\insurance-playwright\insurance-playwright\tests\api\remaining.api.spec.ts:68:112
+
+    Error Context: ..\test-results\api-remaining.api-Remainin-e1c3e-eded-agent-can-authenticate-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\api-remaining.api-Remainin-e1c3e-eded-agent-can-authenticate-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\api-remaining.api-Remainin-e1c3e-eded-agent-can-authenticate-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Remaining API coverage › NFR-005 evidence capture is configured (trace/video/screenshot on failure)" classname="api\remaining.api.spec.ts" time="0.019">
+</testcase>
+</testsuite>
+</testsuites>
