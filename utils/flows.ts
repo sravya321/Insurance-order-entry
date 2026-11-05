@@ -28,8 +28,7 @@ export class AppFlow {
     await this.on('client'); await this.client.fillAll(validClient(over), dob); if (advance) await this.client.nextAndExpectAdvance();
   }
   async doAddress(over: FormData = {}, advance = true) {
-    await this.on('address-contact'); await this.address.fillForm(validAddress(over)); if (advance) await this.address.nextAndExpectAdvance();
-  }
+await this.on('address-contact'); await this.address.fillForm(validAddress(over)); await this.address.completeRequired(); if (advance) await this.address.nextAndExpectAdvance();  }
   async doKyc(over: FormData = {}, advance = true) {
     await this.on('kyc-financial'); await this.kyc.fillForm(validKyc(over));
     await this.kyc.pepNo().check().catch(() => {});

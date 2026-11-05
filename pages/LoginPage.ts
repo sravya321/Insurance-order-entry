@@ -19,7 +19,7 @@ export class LoginPage {
     await this.goto();
     await this.login(email, password);
     try {
-      await this.page.waitForURL((u) => !/\/login\/?$/.test(u.pathname), { timeout: 20_000 });
+      await this.page.waitForURL(/\/(dashboard|applications\/\d+\/client)/, { timeout: 20_000 });  
     } catch {
       const msg = await errors(this.page).first().innerText().catch(() => '(no error text on page)');
       throw new Error(`Login did not leave /login for ${email}. URL=${this.page.url()} page message: ${msg}`);
@@ -46,6 +46,16 @@ export class LoginPage {
   }
   error = (text?: string | RegExp) => errors(this.page, text).first();
   async expectOnLogin() { await expect(this.page).toHaveURL(/\/login/); }
+  /**
+   * Blank-field submits are blocked by the browser's native `required` validation, so no
+   * .error element is ever rendered. Pass: a visible app error OR at least one :invalid control.
+   */
+  async expectBlockedByValidation() {
+    await this.expectOnLogin();
+    const invalid = this.page.locator('input:invalid, select:invalid');
+    const appError = errors(this.page).first();
+    await expect(invalid.first().or(appError), 'expected native :invalid field or an app validation error').toBeVisible();
+  }
   async logout() {
     await this.page.locator('[data-testid="nav-logout-button"]').or(this.page.getByRole('button', { name: /log ?out|sign ?out/i })).first().click();
   }

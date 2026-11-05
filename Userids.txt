@@ -1,0 +1,46 @@
++--------------------------------+----------------+-----------------------+--------------+---------------------+
+| email                          | account_status | failed_login_attempts | locked_until | current_db_time     |
++--------------------------------+----------------+-----------------------+--------------+---------------------+
+| agent.valid@insurance.test     | ACTIVE         |                     2 | NULL         | 2026-10-30 13:17:47 |
+| agent.new@insurance.test       | ACTIVE         |                     2 | NULL         | 2026-10-30 13:17:47 |
+| agent.draft@insurance.test     | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| agent.submitted@insurance.test | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| agent.locked@insurance.test    | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| agent.mfa@insurance.test       | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| admin@insurance.test           | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner001@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner002@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner003@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner004@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner005@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner006@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner007@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner008@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner009@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner010@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner011@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner012@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner013@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner014@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner015@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner016@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner017@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner018@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner019@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner020@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner021@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner022@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner023@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner024@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner025@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner026@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner027@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner028@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner029@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| learner030@insurance.test      | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| testagent@yopmail.com          | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| agent01@yopmail.com            | ACTIVE         |                     1 | NULL         | 2026-10-30 13:17:47 |
+| agent02@yopmail.com            | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
+| agent03@yopmail.com            | ACTIVE         |                     0 | NULL         | 2026-10-30 13:17:47 |
++--------------------------------+----------------+-----------------------+--------------+---------------------+
+41 rows in set (0.009 sec)

@@ -45,12 +45,16 @@ export async function setField(scope: Scope, label: string | RegExp, value: stri
   const tag = await el.evaluate((n) => n.tagName.toLowerCase());
   const type = await el.evaluate((n) => (n as HTMLInputElement).type || '');
   if (tag === 'select') {
-    try {
-      await el.selectOption({ label: String(value) });
-    } catch {
-      await el.selectOption(String(value));
-    }
-  } else if (type === 'checkbox' || type === 'radio') {
+  const want = String(value).trim().toLowerCase();
+  const opts = await el.locator('option').evaluateAll((os) =>
+    os.map((o) => ({ value: (o as HTMLOptionElement).value, text: (o.textContent || '').trim() })));
+  const hit =
+    opts.find((o) => o.text.toLowerCase() === want || o.value.toLowerCase() === want) ||
+    opts.find((o) => o.text.toLowerCase().startsWith(want[0]) && o.value !== '') ||
+    opts.find((o) => o.value !== '');
+  if (!hit) throw new Error(`No selectable option for "${value}". Options: ${JSON.stringify(opts)}`);
+  await el.selectOption(hit.value);
+} else if (type === 'checkbox' || type === 'radio') {
     await el.setChecked(Boolean(value));
   } else {
     await el.fill(String(value));

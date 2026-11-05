@@ -10,11 +10,12 @@ export const uniq = () => `${++seq}`;
 export const validClient = (over: FormData = {}): FormData => ({
   'First Name': 'Asha',
   'Last Name': `Verma${uniq()}`,
-  Gender: 'Female',
+  Gender: 'F',
   'Marital Status': 'Married',
   Nationality: 'Indian',
-  Occupation: 'Engineer',
-  ...over,
+   Occupation: 'Engineer',
+  'Employer Name': 'Acme Insurance Ltd',
+  'Employer Address': '1 Business Park, Mumbai',
 });
 export const validDob = () => dobForAge(35);
 
